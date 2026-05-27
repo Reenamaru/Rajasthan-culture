@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajasthan Kings</title>
+
+<style>
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+/* BACKGROUND */
+body{
+    background:linear-gradient(135deg,#f8f4ef,#fff3e0);
+}
+
+/* HEADER WITH BACK BUTTON */
+.header{
+    background:#8e2b1f;
+    color:white;
+    text-align:center;
+    padding:25px;
+    font-size:30px;
+    font-weight:bold;
+    letter-spacing:1px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+/* ======================================================= */
+/* BACK BUTTON STYLE (SAME AS RANI CODE)                   */
+/* ======================================================= */
+.back-btn {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffd700; /* Royal Gold */
+    color: #000;
+    padding: 10px 22px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.back-btn:hover {
+    background: #fff;
+    color: #8e2b1f;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+/* SUNDER & ATTRACTIVE ROYAL INTRO BOX STYLE */
+.intro-box {
+    max-width: 850px;
+    margin: 40px auto 20px auto;
+    padding: 25px 35px;
+    background: linear-gradient(135deg, #ffffff, #fffdf9); 
+    border-left: 6px solid #8e2b1f;   
+    border-right: 6px solid #ffd700;  
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(142,43,31,0.12); 
+    text-align: center;
+    position: relative;
+}
+
+.intro-box p {
+    font-size: 21px; 
+    color: #3d3d3d;
+    font-weight: 700; 
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+.intro-box .highlight-red {
+    color: #8e2b1f;
+}
+
+.intro-box .highlight-gold {
+    color: #b8860b; 
+}
+
+/* GRID */
+.container{
+    width:90%;
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    transition:0.4s;
+    animation:fadeUp 0.8s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* IMAGE */
+.card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+/* TITLE */
+.card h3{
+    text-align:center;
+    margin-top:10px;
+    color:#c0392b;
+}
+
+/* BADGE */
+.badge{
+    display:block;
+    text-align:center;
+    background:#ffd700;
+    padding:6px;
+    font-weight:bold;
+    color:#000;
+    margin:10px 40px;
+    border-radius:20px;
+}
+
+/* TEXT */
+.card p{
+    text-align:center;
+    padding:10px 15px;
+    font-size:15px;
+    color:#333;
+    line-height:1.5;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ======================================================= */
+/* ROYAL MAROON & GOLD EXPLORE BUTTON (BOTTOM ME LAGA DIYA)*/
+/* ======================================================= */
+.explore-btn-container {
+    text-align: center;
+    margin: 70px 0;
+}
+
+.btn-kings-explore {
+    display: inline-block;
+    background: linear-gradient(45deg, #8e2b1f, #5c1910);
+    color: #fff;
+    padding: 20px 50px;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 2px solid #ffd700;
+    box-shadow: 0 8px 25px rgba(142, 43, 31, 0.25);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shimmer Light Reflection (Chamakne vaala effect) */
+.btn-kings-explore::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,215,0,0.3), transparent);
+    transition: 0.5s;
+}
+
+.btn-kings-explore:hover::before {
+    left: 100%;
+}
+
+.btn-kings-explore:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(92, 25, 16, 0.35), 0 0 20px rgba(255, 215, 0, 0.5);
+    background: linear-gradient(45deg, #5c1910, #8e2b1f);
+    color: #fff;
+}
+/* ======================================================= */
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#8e2b1f;
+    color:white;
+    margin-top:30px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .back-btn {
+        position: static;
+        display: inline-block;
+        margin-top: 10px;
+        transform: none;
+    }
+    .btn-kings-explore {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER WITH BACK BUTTON -->
+<div class="header">
+    <a href="index.html" class="back-btn">← Back</a>
+    👑 Rajasthan Kings & Warriors
+</div>
+
+<!-- ROYAL INTRO BOX -->
+<div class="intro-box">
+    <p>
+        👑 Rajasthan ke <span class="highlight-red">veer rajput raja</span> jo apni <span class="highlight-gold">bahaduri aur history</span> ke liye mashoor hain ⚔️
+    </p>
+</div>
+
+<!-- GRID -->
+<div class="container">
+
+    <!-- KING 1 -->
+    <div class="card">
+        <img src="w.jpg" alt="Maharana Pratap">
+        <h3>Maharana Pratap</h3>
+        <span class="badge">Mewar King</span>
+        <p>Haldi Ghati yudh ke veer yodha, jinhone kabhi haar nahi maani.</p>
+    </div>
+
+    <!-- KING 2 -->
+    <div class="card">
+        <img src="y.jpg" alt="Raja Man Singh">
+        <h3>Raja Man Singh</h3>
+        <span class="badge">Amber King</span>
+        <p>Akbar ke trusted general aur strong Amber kingdom ke ruler.</p>
+    </div>
+
+    <!-- KING 3 -->
+    <div class="card">
+        <img src="x.webp" alt="Jai Singh II">
+        <h3>Maharaja Sawai Jai Singh II</h3>
+        <span class="badge">Jaipur Founder</span>
+        <p>Jaipur city ke founder aur astronomy expert king.</p>
+    </div>
+
+    <!-- KING 4 -->
+    <div class="card">
+        <img src="z.jfif" alt="Rana Sanga">
+        <h3>Rana Sanga</h3>
+        <span class="badge">Mewar Warrior</span>
+        <p>Mewar ke parakrami yodha, jinhone 80 ghaw khane ke baad bhi yudh bhumi me dushman ko khaded diya.</p>
+    </div>
+
+</div>
+
+<!-- HIGHLY ATTRACTIVE EXPLORE BUTTON FOR QUEENS PAGE -->
+<div class="explore-btn-container">
+    <a href="rani.html" class="btn-kings-explore">✨ Explore Rajputana Queens Now →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Rajasthan Kings| Reena & Beenu
+</footer>
+
+</body>
+</html>

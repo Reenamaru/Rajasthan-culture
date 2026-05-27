@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rajasthan Tourism - Home</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial,Helvetica,sans-serif;
+    }
+
+    body{
+        background:#f8f4ef;
+        color:#333;
+    }
+
+    /* NAVBAR */
+
+    nav{
+        background:#8e2b1f;
+        padding:15px;
+        text-align:center;
+        position:sticky;
+        top:0;
+        z-index:1000;
+    }
+
+    nav a{
+        color:white;
+        text-decoration:none;
+        margin:0 15px;
+        font-weight:bold;
+        transition:0.3s;
+    }
+
+    nav a:hover{
+        color:#ffd700;
+    }
+
+    /* CONTAINER */
+
+    .container{
+        padding:30px;
+    }
+
+    h1{
+        text-align:center;
+        margin-bottom:20px;
+        color:#c0392b;
+        font-size:42px;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+        height:500px;
+        background:url(h.webp) center/cover no-repeat;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        position:relative;
+    }
+
+    .hero::before{
+        content:'';
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.4);
+    }
+
+    .hero-content{
+        position:relative;
+        z-index:2;
+        color:white;
+    }
+
+    .hero-content h2{
+        font-size:55px;
+        margin-bottom:25px;
+        text-shadow:2px 2px 5px black;
+    }
+
+    /* BUTTON */
+
+    .explore-btn{
+        display:inline-block;
+        padding:15px 40px;
+        background:#ffd700;
+        color:#8e2b1f;
+        text-decoration:none;
+        font-size:20px;
+        font-weight:bold;
+        border-radius:50px;
+        transition:0.3s;
+    }
+
+    .explore-btn:hover{
+        background:white;
+        transform:scale(1.08);
+    }
+
+    /* FOOTER */
+
+    footer{
+        background:#c0392b;
+        color:white;
+        text-align:center;
+        padding:15px;
+        margin-top:30px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+        nav a{
+            display:inline-block;
+            margin:8px;
+        }
+
+        .hero-content h2{
+            font-size:38px;
+        }
+
+        .explore-btn{
+            font-size:18px;
+            padding:12px 30px;
+        }
+
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <a href="login.html">Login</a>
+
+    <a href="index.html">Home</a>
+
+    <a href="culture.html">Culture</a>
+
+    <a href="tourism.html">Tourism</a>
+
+    <a href="festival.html">Festivals</a>
+
+    <a href="gallery.html">Gallery</a>
+
+    <a href="blog.html">Blog</a>
+
+    <a href="contact.html">Contact</a>
+
+</nav>
+
+<!-- TITLE -->
+
+<div class="container">
+
+    <h1>WELCOME TO RAJASTHAN</h1>
+
+</div>
+
+<!-- HERO SECTION -->
+
+<div class="hero">
+
+    <div class="hero-content">
+
+        
+
+        <!-- BUTTON -->
+
+        <a href="king.html" class="explore-btn">
+
+            Explore More
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Rajasthan Tourism | Reena & Beenu
+
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajasthan Culture</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<nav>
+   <a href="index.html">Home</a>
+    <a href="culture.html">Culture</a>
+    <a href="tourism.html">Tourism</a>
+    <a href="festival.html">Festivals</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+    scroll-behavior:smooth;
+}
+nav{background:#8e2b1f;padding:12px;text-align:center}
+nav a{color:white;text-decoration:none;margin:0 15px;font-weight:bold}
+nav a:hover{color:#ffd700}
+
+body{
+    background: linear-gradient(-45deg, #ff6a00, #ee0979, #ffb347, #ff512f);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color:white;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+header{
+    height:100vh;
+background:url(p2.jpg) center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+header::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.header-content{
+    position:relative;
+    z-index:1;
+}
+
+.header-content h1{
+    font-size:60px;
+    font-family:'Playfair Display', serif;
+}
+
+.header-content p{
+    font-size:20px;
+    margin-top:15px;
+    max-width:700px;
+}
+
+section{
+    padding:80px 10%;
+    text-align:center;
+}
+
+section h2{
+    font-size:40px;
+    margin-bottom:40px;
+    font-family:'Playfair Display', serif;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:10px;
+}
+
+.card{
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+    padding:20px;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    background:rgba(255,255,255,0.2);
+}
+
+.card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(0,0,0,0.6);
+    font-size:14px;
+}
+
+@media(max-width:768px){
+    .header-content h1{
+        font-size:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+<header>
+    <div class="header-content">
+        <h1>Rajasthan Culture</h1>
+        <p>The Land of Kings known for its royal heritage, colorful traditions, vibrant festivals and magnificent forts.</p>
+    </div>
+</header>
+
+<section>
+    <h2>Folk Dance & Music</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="g.jpg">
+            <h3>Ghoomar Dance</h3>
+            <p>A graceful dance performed by women in colorful ghagras during festivals and celebrations.</p>
+        </div>
+        <div class="card">
+            <img src="k.jpg">
+            <h3>Kalbeliya Dance</h3>
+            <p>Traditional dance of the Kalbeliya tribe known for snake-like movements.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Traditional Dress</h2>
+    <div class="cards">
+        <div class="card">
+         <img src="m.jpg">
+
+            <h3>Men's Attire</h3>
+            <p>Dhoti, Kurta and colorful Pagri (turban) represent royal pride.</p>
+        </div>
+        <div class="card">
+            <img src="w.webp">
+            <h3>Women's Attire</h3>
+            <p>Ghagra, Choli and Odhni decorated with embroidery and mirror work.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Rajasthan Culture Page |Reena & Beenu
+</footer>
+
+</body>
+</html>

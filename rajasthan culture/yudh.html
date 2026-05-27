@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajasthan Ke Mahatvapurna Yudh</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body{
+    /* Ekdum balanced, light aur shahi Sandstone-Cream background tint */
+    background: #fdfaf4; 
+    background: linear-gradient(135deg, #fbf7f0 0%, #f3e9dc 100%);
+    color: #3a2222; 
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Dim overlay jab paragraph open ho */
+.page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(139, 38, 23, 0.25); /* Light maroonish-dim overlay */
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+body.dimmed .page-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.header{
+    /* Pure Royal Maroon aur Crimson Red Gradient */
+    background: linear-gradient(90deg, #a82c1e, #731a0f); 
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 4px solid #d4af37; /* Royal Gold Border */
+    box-shadow: 0 8px 25px rgba(115, 26, 15, 0.15);
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #d4af37; /* Metallic Gold */
+    color: #fff;
+    padding: 10px 22px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.back-btn:hover {
+    background: #731a0f;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+.main-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ======================================================= */
+/* ROYAL SANDSTONE BATTLE CARD LAYOUT (BRIGHT & COLORFUL) */
+/* ======================================================= */
+.battle-row {
+    display: flex;
+    align-items: center;
+    /* Soft colorful cream background with royal crimson touch */
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(168, 44, 30, 0.2); /* Soft maroon tint border */
+    margin-bottom: 50px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(115, 26, 15, 0.06);
+    transform: perspective(1000px) rotateX(0deg) translateY(0px);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Hover par card rangeen aur dynamic lagega */
+.battle-row:hover {
+    transform: perspective(1000px) translateY(-10px) scale(1.02);
+    border-color: #a82c1e;
+    box-shadow: 0 20px 40px rgba(115, 26, 15, 0.12), 0 0 30px rgba(212, 175, 55, 0.25);
+    background: #ffffff;
+}
+
+.battle-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.battle-text {
+    flex: 1;
+    padding: 45px;
+}
+
+.battle-text h2 {
+    color: #a82c1e; /* Deep Royal Red */
+    font-size: 26px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.battle-row:hover h2 {
+    color: #731a0f;
+}
+
+.battle-date {
+    display: inline-block;
+    background: linear-gradient(45deg, #d4af37, #aa820a); /* Golden Badge */
+    color: #fff;
+    padding: 6px 18px;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+}
+
+/* ======================================================= */
+/* TEXT PARAGRAPH (PREMIUM TONE & CONTRAST)                */
+/* ======================================================= */
+.battle-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a3333; /* Dark earthy brown for crystal clear reading */
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #faf2e6; /* Shahi pale gold block */
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+}
+
+.battle-text p:hover {
+    background: #ffffff;
+    border-color: #a82c1e;
+    box-shadow: 0 4px 15px rgba(168, 44, 30, 0.08);
+}
+
+/* Active State - Jab click ho toh poora dhyan khinche */
+.battle-text p.active-read {
+    position: relative;
+    z-index: 15;
+    background: #ffffff !important;
+    color: #000 !important;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: 0 20px 45px rgba(115, 26, 15, 0.2), 0 0 40px rgba(212, 175, 55, 0.4);
+    transform: scale(1.05);
+    border: 2px solid #a82c1e;
+}
+
+.battle-img {
+    flex: 1;
+    height: 380px;
+    overflow: hidden;
+    position: relative;
+}
+
+.battle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.battle-row:hover .battle-img img {
+    transform: scale(1.06);
+}
+
+/* ======================================================= */
+/* ROYAL MAROON & GOLD EXPLORE BUTTON                      */
+/* ======================================================= */
+.culture-btn-container {
+    text-align: center;
+    margin: 70px 0;
+}
+
+.btn-culture-explore {
+    display: inline-block;
+    background: linear-gradient(45deg, #a82c1e, #731a0f);
+    color: #fff;
+    padding: 20px 50px;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 2px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(168, 44, 30, 0.25);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+/* Shimmer Light Reflection */
+.btn-culture-explore::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,212,55,0.3), transparent);
+    transition: 0.5s;
+}
+
+.btn-culture-explore:hover::before {
+    left: 100%;
+}
+
+.btn-culture-explore:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(115, 26, 15, 0.35), 0 0 20px rgba(212, 175, 55, 0.5);
+    background: linear-gradient(45deg, #731a0f, #a82c1e);
+    color: #fff;
+}
+
+footer{
+    text-align: center;
+    padding: 25px;
+    background: #ecdcc9; /* Matching warm footer border */
+    color: #5c3c3c;
+    font-weight: 500;
+    border-top: 2px solid rgba(168, 44, 30, 0.1);
+}
+
+@media (max-width: 850px) {
+    .battle-row, .battle-row.reverse { flex-direction: column; }
+    .battle-img { width: 100%; height: 280px; }
+    .battle-text { padding: 30px; }
+    .back-btn { position: static; display: inline-block; margin-top: 10px; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Dark Overlay for Paragraph Focus -->
+<div class="page-overlay" id="overlay"></div>
+
+<div class="header">
+    <a href="rani.html" class="back-btn">← Back</a>
+    ⚔️ Rajasthan Ke Aitihasik Yudh
+</div>
+
+<div class="main-container">
+
+    <!-- BATTLE 1: Tarain -->
+    <div class="battle-row">
+        <div class="battle-text">
+            <h2>Tarain Ka Yudh (Battle of Tarain)</h2>
+            <span class="battle-date">Year: 1191 & 1192</span>
+            <p>Tarain ka yudh Prithviraj Chauhan aur Mohammad Ghori ke beech lada gaya tha. Pehle yudh (1191) me Veer Prithviraj Chauhan ne Ghori ko buri tarah haraya. Lekin agle hi saal 1192 me hue dusre yudh me chal kapat se Ghori ki jeet hui, jisne Bharat ka itihaas badal diya. 🔍 (Click to Read)</p>
+        </div>
+        <div class="battle-img">
+            <img src="1129.jpg" alt="Battle of Tarain">
+        </div>
+    </div>
+
+    <!-- BATTLE 2: Chittorgarh -->
+    <div class="battle-row reverse">
+        <div class="battle-text">
+            <h2>Chittorgarh Ka Yudh (Battle of Chittor)</h2>
+            <span class="battle-date">Year: 1303</span>
+            <p>Yeh yudh Alauddin Khilji aur Mewar ke Rawal Ratan Singh ke beech Chittorgarh qile par adhikar ke liye lada gaya tha. Rajputo ne dushman ka datkar samna kiya. Rawal Ratan Singh ke veer-gati pane ke baad Rani Padmini ne 16,000 rajputaniyo ke sath shahi Jauhar kiya tha. 🔍 (Click to Read)</p>
+        </div>
+        <div class="battle-img">
+            <img src="johar.jpg" alt="Battle of Chittor">
+        </div>
+    </div>
+
+    <!-- BATTLE 3: Khanwa -->
+    <div class="battle-row">
+        <div class="battle-text">
+            <h2>Khanwa Ka Yudh (Battle of Khanwa)</h2>
+            <span class="battle-date">Year: 1527</span>
+            <p>Khanwa ka yudh Bharat ke itihaas ke sabse bade yudho me se ek hai, jo Mughal badshah Babur aur Mewar ke Maharana Sanga ke beech lada gaya. Maharana Sanga ke sharir par 80 ghav hone ke baad bhi unhone datkar yudh kiya. Is yudh ne Rajputana ki ekta ko darshaya. 🔍 (Click to Read)</p>
+        </div>
+        <div class="battle-img">
+            <img src="khanwa.jfif" alt="Battle of Khanwa">
+        </div>
+    </div>
+
+    <!-- BATTLE 4: Haldighati -->
+    <div class="battle-row reverse">
+        <div class="battle-text">
+            <h2>Haldighati Ka Yudh (Battle of Haldighati)</h2>
+            <span class="battle-date">Year: 1576</span>
+            <p>Haldighati ka yudh adbhut sahas aur desh-prem ka prateek hai. Yeh yudh Mewar ke Sher Maharana Pratap aur Akbar ki Mughal sena ke beech lada gaya. Maharana Pratap aur unke wafadar ghode 'Chetak' ki veerta aaj bhi har Hindustani ke dil me amar hai. 🔍 (Click to Read)</p>
+        </div>
+        <div class="battle-img">
+            <img src="haldigati.jfif" alt="Battle of Haldighati">
+        </div>
+    </div>
+
+</div>
+
+<!-- HIGHLY ATTRACTIVE EXPLORE BUTTON FOR CULTURE -->
+<div class="culture-btn-container">
+    <a href="culture.html" class="btn-culture-explore">✨ Explore Rajasthan Culture & Traditions →</a>
+</div>
+
+<footer>
+    © 2026 Rajasthan Yudh|Reena & Beenu
+</footer>
+
+<!-- INTERACTIVE JAVASCRIPT FOR CINEMATIC CLICK EFFECT -->
+<script>
+    const paragraphs = document.querySelectorAll('.battle-text p');
+    const overlay = document.getElementById('overlay');
+    const body = document.body;
+    
+    paragraphs.forEach(p => {
+        p.addEventListener('click', function(e) {
+            e.stopPropagation(); 
+            
+            if(this.classList.contains('active-read')) {
+                this.classList.remove('active-read');
+                body.classList.remove('dimmed');
+            } else {
+                paragraphs.forEach(el => el.classList.remove('active-read'));
+                this.classList.add('active-read');
+                body.classList.add('dimmed');
+            }
+        });
+    });
+
+    overlay.addEventListener('click', () => {
+        paragraphs.forEach(el => el.classList.remove('active-read'));
+        body.classList.remove('dimmed');
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajasthan Tourism</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(-45deg, #ff8008, #ffc837, #ff512f, #dd2476);
+    background-size:400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color:white;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+header{
+    height:100vh;
+    background:url(tu.jpg) center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+nav{background:#8e2b1f;padding:12px;text-align:center}
+nav a{color:white;text-decoration:none;margin:0 15px;font-weight:bold}
+nav a:hover{color:#ffd700}
+
+header::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.header-content{
+    position:relative;
+    z-index:1;
+}
+
+.header-content h1{
+    font-size:60px;
+    font-family:'Playfair Display', serif;
+}
+
+.header-content p{
+    font-size:20px;
+    margin-top:15px;
+}
+
+section{
+    padding:80px 10%;
+    text-align:center;
+}
+
+section h2{
+    font-size:40px;
+    margin-bottom:40px;
+    font-family:'Playfair Display', serif;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+    padding:20px;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    background:rgba(255,255,255,0.2);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(0,0,0,0.6);
+    font-size:14px;
+}
+
+@media(max-width:768px){
+    .header-content h1{
+        font-size:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="culture.html">Culture</a>
+    <a href="tourism.html">Tourism</a>
+    <a href="festival.html">Festivals</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+
+<header>
+    <div class="header-content">
+        <h1> Rajasthan Tourism</h1>
+        <p>The Land of Kings – Experience Royal Heritage & Desert Adventures</p>
+    </div>
+</header>
+
+<section>
+    <h2>Top Tourist Destinations</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="j.jpg">
+            <h3>Jaipur</h3>
+            <p>The Pink City known for Hawa Mahal, Amer Fort and royal palaces.</p>
+        </div>
+
+        <div class="card">
+            <img src="u.jpg">
+            <h3>Udaipur</h3>
+            <p>The City of Lakes famous for Lake Pichola and City Palace.</p>
+        </div>
+
+        <div class="card">
+            <img src="ja.jpg">
+            <h3>Jaisalmer</h3>
+            <p>The Golden City known for desert safari and Jaisalmer Fort.</p>
+        </div>
+
+        <div class="card">
+            <img src="jo.jpg">
+            <h3>Jodhpur</h3>
+            <p>The Blue City famous for Mehrangarh Fort and vibrant markets.</p>
+        </div>
+
+     <div class="card">
+            <img src="ma.jpg">
+            <h3>Mount Abu</h3>
+            <p>Mount Abu is the only hill station in Rajasthan, situated in the Aravalli Range.</p>
+        </div>
+
+     <div class="card">
+            <img src="ch.jfif">
+            <h3>Chittorgarh</h3>
+            <p>Chittorgarh is famous for its massive and grand Chittorgarh Fort .</p>
+        </div>
+
+<div class="card">
+            <img src="r.jpg">
+            <h3>Ranthambore</h3>
+            <p>Ranthambore is known for its world-famous Ranthambore National Park and the historic Ranthambore Fort.</p>
+        </div>
+
+      <div class="card">
+            <img src="ji.jpg">
+            <h3>Ajmer</h3>
+            <p>Ajmer's Ana Sagar Lake is a historic artificial lake.</p>
+        </div>
+
+ <div class="card">
+            <img src="s.jpg">
+            <h3>Sikar</h3>
+            <p>Sikar is a historical city in the Shekhawati region of Rajasthan.</p>
+        </div>
+  </div>
+
+
+    </div>
+</section>
+
+<section>
+    <h2>Adventure & Experiences</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Desert Safari</h3>
+            <p>Enjoy camel rides and cultural nights in Thar Desert.</p>
+        </div>
+        <div class="card">
+            <h3>Heritage Walk</h3>
+            <p>Explore royal palaces and ancient forts.</p>
+        </div>
+        <div class="card">
+            <h3>Luxury Stay</h3>
+            <p>Stay in heritage hotels and experience royal hospitality.</p>
+        </div>
+   
+</section>
+
+<footer>
+    © 2026 Rajasthan Tourism | Reena & Beenu
+</footer>
+
+</body>
+</html>

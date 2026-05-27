@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajasthan Famous Queens</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#f8f4ef,#fff3e0);
+}
+
+.header{
+    background:#8e2b1f;
+    color:white;
+    text-align:center;
+    padding:25px;
+    font-size:30px;
+    font-weight:bold;
+    letter-spacing:1px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+/* ======================================================= */
+/* BACK BUTTON STYLE (YUDH CODE JESE SAME LEFT ME)         */
+/* ======================================================= */
+.back-btn {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffd700; /* Royal Gold */
+    color: #000;
+    padding: 10px 22px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.back-btn:hover {
+    background: #fff;
+    color: #8e2b1f;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+/* ======================================================= */
+/* NEW ATTRACTIVE INTRO QUOTE BOX STYLE */
+/* ======================================================= */
+.intro-box {
+    max-width: 800px;
+    margin: 35px auto 15px auto;
+    padding: 20px 30px;
+    background: #ffffff;
+    border-left: 5px solid #8e2b1f;   /* Shahi Red Border */
+    border-right: 5px solid #ffd700;  /* Royal Gold Border */
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(142,43,31,0.1);
+    text-align: center;
+    position: relative;
+}
+
+.intro-box p {
+    font-size: 20px;
+    color: #555;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.intro-box span {
+    color: #8e2b1f; /* Kuch shabdo ko high-light karne ke liye */
+}
+/* ======================================================= */
+
+.container{
+    width:95%;
+    margin:30px auto;
+    display: flex;             
+    justify-content: center;    
+    gap: 20px;                 
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,0.15);
+    transition:0.4s;
+    flex: 1;                   
+    min-width: 220px;          
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(142,43,31,0.3);
+}
+
+.card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    object-position:top;
+}
+
+.card h3{
+    text-align:center;
+    margin-top:15px;
+    color:#c0392b;
+    font-size:20px;
+}
+
+/* ======================================================= */
+/* CHAGED BADGE COLOR FROM PINK TO YELLOW */
+/* ======================================================= */
+.badge{
+    display:block;
+    text-align:center;
+    background:#ffd700;        /* Ekdum mast shining Yellow color */
+    padding:6px;
+    font-weight:bold;
+    color:#000;                /* Yellow par black text clear dikhega */
+    margin:10px 40px;          
+    border-radius:20px;
+    font-size:13px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* ======================================================= */
+
+.card p{
+    text-align:center;
+    padding:10px 15px 20px 15px;
+    font-size:14px;
+    color:#333;
+    line-height:1.5;
+}
+
+/* ======================================================= */
+/* ROYAL MAROON & GOLD EXPLORE BUTTON (BOTTOM ME LAGA DIYA)*/
+/* ======================================================= */
+.culture-btn-container {
+    text-align: center;
+    margin: 70px 0;
+}
+
+.btn-culture-explore {
+    display: inline-block;
+    background: linear-gradient(45deg, #8e2b1f, #5c1910);
+    color: #fff;
+    padding: 20px 50px;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 2px solid #ffd700;
+    box-shadow: 0 8px 25px rgba(142, 43, 31, 0.25);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shimmer Light Reflection (Chamakne vaala effect) */
+.btn-culture-explore::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,215,0,0.3), transparent);
+    transition: 0.5s;
+}
+
+.btn-culture-explore:hover::before {
+    left: 100%;
+}
+
+.btn-culture-explore:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(92, 25, 16, 0.35), 0 0 20px rgba(255, 215, 0, 0.5);
+    background: linear-gradient(45deg, #5c1910, #8e2b1f);
+    color: #fff;
+}
+/* ======================================================= */
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#8e2b1f;
+    color:white;
+    margin-top:40px;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-wrap: wrap;       
+    }
+    .card {
+        flex: 1 1 calc(50% - 20px); 
+    }
+}
+@media (max-width: 600px) {
+    .card {
+        flex: 1 1 100%;        
+    }
+    .back-btn { 
+        position: static; 
+        display: inline-block; 
+        margin-top: 10px; 
+        transform: none; 
+    }
+    .btn-culture-explore {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <a href="king.html" class="back-btn">← Back</a>
+    💃 Rajputana Ki Veer Raniya
+</div>
+
+<!-- NEW ATTRACTIVE DESIGN FOR INTRODUCTION LINE -->
+<div class="intro-box">
+    <p>✨ Rajasthan ka itihaas jitna <span>Veeron ke parakram</span> se saja hai, utna hi raniyon ke <span>Adbhut Balidan</span> aur <span>Bhakti</span> ke liye jaana jata hai! ✨</p>
+</div>
+
+<div class="container">
+
+    <!-- QUEEN 1 -->
+    <div class="card">
+        <img src="pd.avif" alt="Rani Padmini">
+        <h3>Rani Padmini</h3>
+        <span class="badge">Mewar Queen</span>
+        <p>Apni kshatrayani aan aur sammaan ke liye khade-khade shahi Jauhar karne wali amar rani.</p>
+    </div>
+
+    <!-- QUEEN 2 -->
+    <div class="card">
+        <img src="mera.jfif" alt="Meera Bai">
+        <h3>Meera Bai</h3>
+        <span class="badge">Mewar Mystic</span>
+        <p>Krishna prem me magan rehne wali rajkumari, jinki bhakti aur bhajan aaj bhi amar hain.</p>
+    </div>
+
+    <!-- QUEEN 3 -->
+    <div class="card">
+        <img src="hadi.jpg" alt="Hadi Rani">
+        <h3>Hadi Rani</h3>
+        <span class="badge">Brave Queen</span>
+        <p>Yudh par ja rahe pati ka moh bhang karne ke liye apna sheesh kaat kar dene wali veerangana.</p>
+    </div>
+
+    <!-- QUEEN 4 -->
+    <div class="card">
+        <img src="joda.jpg" alt="Rani Jodha Bai">
+        <h3>Rani Jodha Bai</h3>
+        <span class="badge">Amber Princess</span>
+        <p>Amer ki rajkumari jinhone rajput-mughal itihaas me ek mahatvapurna bhoomika nibhai.</p>
+    </div>
+</div>
+
+<!-- HIGHLY ATTRACTIVE EXPLORE BUTTON FOR CULTURE -->
+<div class="culture-btn-container">
+    <a href="yudh.html" class="btn-culture-explore">✨ Explore Rajasthan yudh→</a>
+</div>
+
+<footer>
+    © 2026 Rajasthan Queen|Reena & Beenu
+ 
+</footer>
+
+</body>
+</html>
